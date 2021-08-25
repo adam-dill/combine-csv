@@ -6,10 +6,11 @@ import csv
 
 # the mapping of header names
 map = dict({
-	'firstName': ['First Name', 'fname'],
-	'lastName': ['Last Name', 'lname'],
-	'email': ['Email', 'email'],
-	'ssn': ['SSN', 'social']
+	'firstName': ['firstName', 'First Name', 'fname', 'first_name'],
+	'lastName': ['lastName', 'Last Name', 'lname', 'last_name'],
+	'email': ['email', 'Email', 'email'],
+	'ssn': ['ssn', 'SSN', 'social'],
+	'cin': ['cin', 'CIN']
 })
 
 
@@ -22,7 +23,6 @@ def getColumns():
 def processFiles(directory):
 	out_data = []
 	files = os.listdir(directory)
-	print(directory)
 	for file in files:
 		if file.endswith(".csv"):
 			with open(directory + file) as csvfile:
