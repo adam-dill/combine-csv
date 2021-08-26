@@ -26,7 +26,6 @@ def processFiles(directory):
 	for file in files:
 		if file.endswith(".csv"):
 			with open(directory + file) as csvfile:
-				#reader = csv.reader(csvfile, delimiter=',', quotechar='|')
 				reader = csv.DictReader(csvfile)
 				
 				for row in reader:
@@ -42,7 +41,7 @@ def processFiles(directory):
 def writeFile(out_file, out_data):
 	out_columns = getColumns()
 	try:
-		with open(out_file, 'w') as csvfile:
+		with open(out_file, 'w', newline='') as csvfile:
 			writer = csv.DictWriter(csvfile, fieldnames=out_columns)
 			writer.writeheader()
 			for data in out_data:
