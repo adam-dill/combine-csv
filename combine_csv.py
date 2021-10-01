@@ -70,8 +70,7 @@ def main(argv):
 			directory = arg
 		elif opt in ("-o", "--out"):
 			out_file = arg
-			
-	out_columns = getColumns()
+
 	out_data = processFiles(directory)
 	writeFile(out_file, out_data)
 	
